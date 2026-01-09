@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-uraz#2@_($wo_g^zx0z%&o$k9@_%#$mitg)56vdu57_dc)bk^2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+import os
+
+# Production settings
+ALLOWED_HOSTS = ['*']  # For Render wildcard
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 
 # Application definition
@@ -127,4 +131,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+
+STATIC_ROOT = BASE_DIR / 'backend' / 'staticfiles'  # ✅ Render-safe path
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = '/opt/render/project/src/static'
+
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Static files configuration - ADD THESE LINES
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Optional: if you have a local static folder
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
