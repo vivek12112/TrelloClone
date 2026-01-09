@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import type { Card, List } from "../../types/board";
 import { updateCard, deleteCard } from "../../api/cards";
-import "/home/vivek/ScalerAssignment/trello-clone/frontend/src/components/card/CardModel.css";
+import "./CardModel.css";
 
 interface Props {
   card: Card;
