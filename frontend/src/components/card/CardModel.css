@@ -1,0 +1,74 @@
+.card-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+.card-modal {
+  background: #f4f5f7;
+  border-radius: 3px;
+  width: 600px;
+  max-width: 90vw;
+  padding: 16px;
+}
+
+.card-modal-header {
+  margin-bottom: 16px;
+}
+
+.card-modal-title {
+  width: 100%;
+  font-size: 20px;
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.card-modal-title:focus {
+  outline: 2px solid #0079bf;
+  background: #fff;
+}
+
+.card-modal-list-name {
+  font-size: 13px;
+  color: #5e6c84;
+}
+
+.card-modal-section h3 {
+  font-size: 14px;
+  margin: 0 0 4px;
+}
+
+.card-modal-description {
+  width: 100%;
+  min-height: 80px;
+  resize: vertical;
+  border-radius: 3px;
+  border: none;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.card-modal-actions {
+  margin-top: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.card-modal-actions button {
+  border-radius: 3px;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.card-modal-delete {
+  background: #b04632;
+  color: #fff;
+}
